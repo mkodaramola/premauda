@@ -189,8 +189,13 @@
     h1,
     h2,
     h3,
+    figure,
     p {
       margin-top: 0;
+    }
+
+    figure {
+      margin: 0;
     }
 
     h1 {
@@ -367,6 +372,8 @@
       color: #ffffff;
       font-size: clamp(26px, 3vw, 40px);
       line-height: 1;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .product-copy p {
@@ -396,6 +403,66 @@
     .spec-list b {
       color: #ffffff;
       text-align: right;
+    }
+
+    .meter-showcase {
+      padding-top: 0;
+    }
+
+    .meter-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, .72fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .meter-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 430px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: clamp(24px, 4vw, 42px);
+      background:
+        linear-gradient(135deg, rgba(0, 83, 63, .72), rgba(16, 34, 29, .94)),
+        linear-gradient(90deg, rgba(73, 196, 223, .12), transparent);
+      box-shadow: var(--shadow);
+    }
+
+    .meter-copy h2 {
+      margin-bottom: 18px;
+      color: #ffffff;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1;
+    }
+
+    .meter-copy p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .72);
+      font-size: 17px;
+    }
+
+    .meter-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .meter-shot {
+      min-height: 430px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
+    }
+
+    .meter-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .capabilities {
@@ -506,6 +573,66 @@
       color: rgba(255, 255, 255, .74);
     }
 
+    .team {
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    .team .section-head h2 {
+      color: var(--ink);
+    }
+
+    .team .section-head p {
+      color: rgba(9, 18, 15, .62);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .team-member {
+      border: 1px solid rgba(9, 18, 15, .12);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 22px 44px rgba(9, 18, 15, .08);
+    }
+
+    .team-member img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      background: rgba(9, 18, 15, .08);
+    }
+
+    .team-member div {
+      padding: 18px;
+    }
+
+    .team-member h3 {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 20px;
+      line-height: 1.08;
+    }
+
+    .team-member p {
+      min-height: 72px;
+      margin-bottom: 14px;
+      color: rgba(9, 18, 15, .62);
+      font-size: 14px;
+    }
+
+    .team-member a {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
     .contact {
       padding-bottom: 42px;
     }
@@ -594,9 +721,15 @@
       .hero-metrics,
       .section-head,
       .product-grid,
+      .meter-layout,
       .capability-grid,
+      .team-grid,
       .contact-panel {
         grid-template-columns: 1fr;
+      }
+
+      .meter-gallery {
+        grid-template-columns: 1fr 1fr;
       }
 
       .capability {
@@ -648,6 +781,15 @@
         min-height: 500px;
       }
 
+      .meter-copy,
+      .meter-shot {
+        min-height: 360px;
+      }
+
+      .meter-gallery {
+        grid-template-columns: 1fr;
+      }
+
       .story-band {
         min-height: 720px;
         background:
@@ -665,13 +807,14 @@
   <div class="site-shell">
     <header class="nav" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Premauda home">
-        <img src="PMD_NEW_bg removed.png" alt="Premauda logo">
+        <img src="Premauda_Logo_clean_background.png" alt="Premauda logo">
         <span>Premauda</span>
       </a>
       <nav class="nav-links" aria-label="Page sections">
         <a href="#products">Products</a>
         <a href="#systems">Systems</a>
         <a href="#traction">Traction</a>
+        <a href="#team">Team</a>
         <a href="https://www.youtube.com/@PDS_ltd">YouTube</a>
         <a class="nav-cta" href="https://www.linkedin.com/company/premauda">LinkedIn</a>
       </nav>
@@ -736,7 +879,7 @@
             </article>
 
             <article class="product-card">
-              <img src="WhatsApp Image 2026-06-16 at 14.45.31.jpeg" alt="Premauda smart energy meter prototype">
+              <img src="smmodel1.jpeg" alt="Premauda proposed smart energy meter 3D model">
               <div class="product-copy">
                 <span class="tag">Smart Energy Meter</span>
                 <h3>Single-phase metering for Nigerian DISCO requirements.</h3>
@@ -748,6 +891,29 @@
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="meter-showcase" aria-labelledby="meter-showcase-title">
+        <div class="section-inner">
+          <div class="meter-layout">
+            <div class="meter-copy">
+              <div class="eyebrow">Proposed smart meter</div>
+              <h2 id="meter-showcase-title">A compact metering platform designed for prepaid energy control.</h2>
+              <p>The enclosure concept brings together the LCD interface, keypad, indicators, relay control, and installation-ready housing needed for local smart meter deployment.</p>
+            </div>
+            <div class="meter-gallery" aria-label="3D model views of the proposed smart energy meter">
+              <figure class="meter-shot">
+                <img src="smmodel1.jpeg" alt="Front view of Premauda proposed smart energy meter 3D model">
+              </figure>
+              <figure class="meter-shot">
+                <img src="smmodel2.jpeg" alt="Angled view of Premauda proposed smart energy meter 3D model">
+              </figure>
+              <figure class="meter-shot">
+                <img src="smmodel3.jpeg" alt="Side view of Premauda proposed smart energy meter 3D model">
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -805,6 +971,53 @@
                 <span>Smart metering, smart monitoring, hybrid integration, and flexible deployment partnerships in the pipeline.</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="team">
+        <div class="section-inner">
+          <div class="section-head">
+            <h2>The team building Premauda systems.</h2>
+            <p>Finance, hardware, R&D, automation, and system testing working together from concept through field-ready products.</p>
+          </div>
+
+          <div class="team-grid">
+            <article class="team-member">
+              <img src="Adeyemo Naimot.jpeg" alt="Adeyemo Naimot">
+              <div>
+                <h3>Adeyemo Naimot</h3>
+                <p>Finance & Administrative Manager</p>
+                <a href="mailto:naimot.adeyemo@premauda.com">naimot.adeyemo@premauda.com</a>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <img src="Oyeniyi Joseph.jpeg" alt="Oyeniyi Joseph">
+              <div>
+                <h3>Oyeniyi Joseph</h3>
+                <p>Team Lead, Smart Energy Meter</p>
+                <a href="mailto:joseph.oyeniyi@premauda.com">joseph.oyeniyi@premauda.com</a>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <img src="Abolodje Victor.jpeg" alt="Abolodje Victor">
+              <div>
+                <h3>Abolodje Victor</h3>
+                <p>Head of R&D</p>
+                <a href="mailto:victor.abolodje@premauda.com">victor.abolodje@premauda.com</a>
+              </div>
+            </article>
+
+            <article class="team-member">
+              <img src="Olajide Iniolouwa.jpeg" alt="Olajide Iniolouwa">
+              <div>
+                <h3>Olajide Iniolouwa</h3>
+                <p>Automation & System Test Engineer</p>
+                <a href="mailto:inioluwa.olajide@premauda.com">inioluwa.olajide@premauda.com</a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
